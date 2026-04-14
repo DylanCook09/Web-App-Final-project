@@ -7,12 +7,19 @@ def get_db():
 
 def init_db():
     conn = get_db()
-    # Add your new table between lines 15 & 16.
-    conn.execute("""
+    conn.executescript("""
         CREATE TABLE IF NOT EXISTS users (
             username TEXT PRIMARY KEY,
             password TEXT
-        )
+        );
+        
+        CREATE TABLE IF NOT EXISTS user (
+            weight_lifted INTEGER,
+            reps INTEGER,
+            mile_time TEXT
+        );
     """)
     conn.commit()
     conn.close()
+
+init_db()
