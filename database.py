@@ -12,7 +12,7 @@ def get_entries_db():
 
 def init_db():
     conn = get_db()
-
+    conn = get_entries_db()
     conn.executescript("""
     CREATE TABLE IF NOT EXISTS users(
         username TEXT PRIMARY KEY,
