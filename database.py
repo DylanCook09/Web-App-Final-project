@@ -12,14 +12,13 @@ def get_entries_db():
 
 def init_db():
     conn = get_db()
-    conn = get_entries_db()
     conn.executescript("""
     CREATE TABLE IF NOT EXISTS users(
         username TEXT PRIMARY KEY,
         password TEXT
     );
     """)
-
+    conn = get_entries_db()
     conn.executescript("""
     CREATE TABLE IF NOT EXISTS entries (
         created_on TEXT DEFAULT CURRENT_DATE PRIMARY KEY,
