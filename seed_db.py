@@ -16,7 +16,6 @@ import bcrypt
 def seed_database():
     """Add sample users to the database"""
     init_db()  # Ensure tables are created
-    
     conn = get_db()
 
     
