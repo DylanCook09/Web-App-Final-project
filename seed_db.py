@@ -52,6 +52,7 @@ def seed_database():
                 "INSERT INTO entries (created_on, mile_time, weight_lifted, calories_consumed) VALUES (?, ?, ?, ?)",
                 (date, mile_time, weight, calories)
             )
+            print("you did it")
         conn_e.commit()
         print("Entries seeded successfully.")
     except Exception as e:
