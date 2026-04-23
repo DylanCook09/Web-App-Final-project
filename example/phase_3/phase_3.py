@@ -153,7 +153,7 @@ def register():
 
     return render_template_string(register_page, error=error)
 
-@app.route("/secret")
+@app.route("/dashboard")
 def secret():
     if "user" not in session:
         return redirect(url_for("login"))
