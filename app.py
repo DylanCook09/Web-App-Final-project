@@ -75,7 +75,7 @@ def register():
 
     return render_template("register.html", error=error)
 
-@app.route("/secret")
+@app.route("/dashboard")
 def secret():
     # TODO: RENAME THIS ROUTE TO /dashboard
 
@@ -100,7 +100,7 @@ def secret():
     # return render_template("dashboard.html", entries=entries, username=session["user"])
 
     # TEMPORARY (remove later)
-    return render_template("secret.html", username=session["user"])
+    return render_template("dashboard.html", username=session["user"])
 
 
 # ---------- CREATE ----------
