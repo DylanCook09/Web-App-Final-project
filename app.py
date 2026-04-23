@@ -76,40 +76,32 @@ def register():
     return render_template("register.html", error=error)
 
 @app.route("/dashboard")
-def secret():
-    # TODO: RENAME THIS ROUTE TO /dashboard
+def dashboard():
 
     if "user" not in session:
         return redirect(url_for("login"))
+    
+    conn = get_db()
 
-    # TODO: Connect to the database
-    # conn = get_db()
+    entries = conn.execute(
+         "SELECT * FROM entries WHERE user=?",
+         (session["user"],)
+     ).fetchall()
 
-    # TODO: Get all entries that belong to the logged-in user
-    # Example:
-    # entries = conn.execute(
-    #     "SELECT * FROM entries WHERE user=?",
-    #     (session["user"],)
-    # ).fetchall()
+    conn.close()
 
-    # TODO: Close the connection
-    # conn.close()
-
-    # TODO: Pass entries into your template
-    # Example:
-    # return render_template("dashboard.html", entries=entries, username=session["user"])
-
-    # TEMPORARY (remove later)
-    return render_template("dashboard.html", username=session["user"])
-
+    return render_template("dashboard.html", entries=entries, username=session["user"])
 
 # ---------- CREATE ----------
-# TODO: Create a route like /create
-# This page should:
-# - Show a form (GET)
-# - Save data to the database (POST)
-# - Redirect back to dashboard
-# NOTE: Remove the triple """ before and after each route to 'uncomment'
+@app.route("/create", methods=["GET", "POST"])
+def create():
+    if "user" not in session:
+        return redirect(url_for("login"))
+
+    if request.method == "POST":
+        # TODO: Get form data (title, content)
+
+        # TODO: Connect to database
 """
 @app.route("/create", methods=["GET", "POST"])
 def create():
