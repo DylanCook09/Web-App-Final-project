@@ -13,6 +13,7 @@
             <p>{{ entry['content'] }}</p>
             
 
+<<<<<<< HEAD
             <a href="/edit/{{ entry['id'] }}"
             
             <a href="/delete/{{ entry['id'] }}"
@@ -27,3 +28,40 @@
         <button type="submit">Logout</button>
     </form>
 {% endblock %}
+=======
+<!-- TODO: Add a button or link to create a new entry -->
+<a href="/create">Create New Entry</a> -->
+
+<br><br>
+
+<!-- TODO: Loop through entries passed from Flask -->
+<!-- The variable "entries" will come from your Flask route -->
+<!-- Example structure: -->
+
+
+{% for entry in entries %}
+    <div>
+        <h3>{{ entry['title'] }}</h3>
+        <p>{{ entry['content'] }}</p>
+
+        <!-- TODO: Add Edit link -->
+        <!-- Example: /edit/{{ entry['id'] }} -->
+
+        <!-- TODO: Add Delete link -->
+        <!-- Example: /delete/{{ entry['id'] }} -->
+
+    </div>
+    <hr>
+{% endfor %}
+
+
+<!-- TODO: If no entries exist, display a message like:
+"No entries yet!" -->
+
+<br>
+
+<!-- TODO: Add a logout button -->
+<a href="/logout"><button>Logout</button></a>
+
+{% endblock %}
+>>>>>>> bcb9788 (my bad fixes...)

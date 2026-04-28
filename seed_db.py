@@ -23,7 +23,39 @@ def seed_database():
         ("bob", "SecurePass456@"),
         ("charlie", "MyPassword789#"),
     ]
+
+    sample_entries = [
+        ("alice", "Password123!"),
+        ("bob", "SecurePass456@"),
+        ("charlie", "MyPassword789#"),
+    ]
     
+    try:
+        for username, password in sample_users:
+            hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+            conn.execute(
+                "INSERT INTO users (username, password) VALUES (?, ?)",
+                (username, hashed_pw)
+            )
+        conn.commit()
+        print("Users seeded successfully.")
+
+        for username, password in sample_users:
+            hashed_pw = bcrypt.hashpw(password.encode("utf-8"), bcrypt.gensalt())
+            conn.execute(
+                "INSERT INTO users (username, password) VALUES (?, ?)",
+                (username, hashed_pw)
+            )
+        conn.commit()
+        print("Entries seeded successfully.")
+
+    except Exception as e:
+        print(f"Error seeding users: {e}")
+        conn_u.rollback()
+    finally:
+        conn_u.close()
+
+    conn_e = get_entries_db()
     sample_entries = [
         ("2023-10-01", 480, 150, 2100),
         ("2023-10-02", 475, 155, 2050),
