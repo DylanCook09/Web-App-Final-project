@@ -100,7 +100,7 @@ def create():
 
     if request.method == "POST":
         # TODO: Get form data (title, content)
-
+        return redirect(url_for("dashboard"))
         # TODO: Connect to database
 """
 @app.route("/create", methods=["GET", "POST"])
