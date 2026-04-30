@@ -14,7 +14,6 @@ def init_db():
         )
     """)
 
-    conn = get_db()
     conn.execute("""
         CREATE TABLE IF NOT EXISTS entries (
             created_on TEXT DEFAULT CURRENT_DATE PRIMARY KEY,

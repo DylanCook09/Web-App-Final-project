@@ -99,28 +99,33 @@ def create():
 
     if request.method == "POST":
         # TODO: Get form data (title, content)
-        return redirect(url_for("dashboard"))
-        # TODO: Connect to database
-"""
-@app.route("/create", methods=["GET", "POST"])
-def create():
-    if "user" not in session:
-        return redirect(url_for("login"))
-
-    if request.method == "POST":
-        # TODO: Get form data (title, content)
+        title = request.form["title"].strip()
+        content = request.form["content"].strip()
 
         # TODO: Connect to database
+        if not title or not content:
+            error = "Fields cannot be empty"
 
-        # TODO: Insert into entries table
-        # IMPORTANT: include session["user"]
+        else:
+            conn = get_db()
+            try:
+                conn.execute(
+                    "INSERT INTO entries (title, content) VALUES (?, ?)",
+                    (title, content)
+                )
+                conn.commit()
 
-        # TODO: Commit and close
+                return redirect(url_for("dashboard"))
+            except:
+                conn.rollback()
+            finally:
+                conn.close()
+
 
         return redirect(url_for("dashboard"))
-
+       
     return render_template("create.html")
-"""
+
 
 # ---------- UPDATE ----------
 # TODO: Create a route like /edit/<id>
