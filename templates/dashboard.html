@@ -1,34 +1,15 @@
+<!-- TODO: Rename this file to dashboard.html when ready -->
+
 {% extends "base.html" %}
 
 {% block content %}
-    <h2>Your Dashboard</h2>
-    <h3>Welcome, {{ username }}!</h3>
 
-    <a href="/create">Create New Entry</a>
-    <br><br>
+<h2>Your Dashboard</h2>
 
-    {% for entry in entries %}
-        <div>
-            <h3>{{ entry['title'] }}</h3>
-            <p>{{ entry['content'] }}</p>
-            
+<h3>Welcome, {{ username }}!</h3>
 
-            <a href="/edit/{{ entry['id'] }}"
-            
-            <a href="/delete/{{ entry['id'] }}"
-        </div>
-        <hr>
-    {% else %}
-        <p>No entries yet!</p>
-    {% endfor %}
-
-    <br>
-    <form action="/logout" 
-        <button type="submit">Logout</button>
-    </form>
-{% endblock %}
 <!-- TODO: Add a button or link to create a new entry -->
-<a href="/create">Create New Entry</a> -->
+<!-- Example: <a href="/create">Create New Entry</a> -->
 
 <br><br>
 
@@ -36,7 +17,7 @@
 <!-- The variable "entries" will come from your Flask route -->
 <!-- Example structure: -->
 
-
+<!--
 {% for entry in entries %}
     <div>
         <h3>{{ entry['title'] }}</h3>
@@ -51,7 +32,7 @@
     </div>
     <hr>
 {% endfor %}
-
+-->
 
 <!-- TODO: If no entries exist, display a message like:
 "No entries yet!" -->

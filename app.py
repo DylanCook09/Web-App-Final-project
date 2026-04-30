@@ -84,8 +84,7 @@ def dashboard():
     conn = get_db()
 
     entries = conn.execute(
-         "SELECT * FROM entries WHERE user=?",
-         (session["user"],)
+         "SELECT * FROM entries"
      ).fetchall()
 
     conn.close()
