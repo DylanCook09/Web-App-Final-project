@@ -16,6 +16,7 @@ def init_db():
 
     conn.execute("""
         CREATE TABLE IF NOT EXISTS entries (
+            # id INTEGER PRIMARY KEY AUTOINCREMENT,
             created_on TEXT DEFAULT CURRENT_DATE PRIMARY KEY,
             mile_time INT,
             weight_lifted INT,
