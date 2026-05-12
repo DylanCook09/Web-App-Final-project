@@ -9,7 +9,9 @@
 
     <!-- TODO: Pre-fill title using entry data -->
     <!-- Hint: value="{{ entry['title'] }}" -->
-
+    <input name="title" placeholder="Title" value=""{{entry['title']}}"><br>"
+    <input name="content" placeholder="Content" value=""{{entry['content']}}><br>
+    <button type=""submit">Update Entry</button>
     <!-- TODO: Pre-fill content using entry data -->
 
     <!-- TODO: Add submit button -->
@@ -17,5 +19,5 @@
 </form>
 
 <!-- TODO: Add a link back to dashboard -->
-
+<a href=""{{ url_for('dashboard')}}
 {% endblock %}

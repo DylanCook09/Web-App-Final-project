@@ -134,32 +134,43 @@ def create():
 # - Show it in a form
 # - Update the database on submit
 
-"""
 @app.route("/edit/<int:id>", methods=["GET", "POST"])
 def edit(id):
     if "user" not in session:
         return redirect(url_for("login"))
 
-    # TODO: Connect to database
+    conn = get_db()
+    entry = conn.execute(
+        "SELECT * FROM entries WHERE id-?",
+        (id,)
+    ).fetchone()
 
-    # TODO: Get entry WHERE id AND user
-    # This prevents editing other users' data
-
-    # if not entry:
-    #     return "Not allowed"
+    if not entry:
+        conn.close()
+        return "Entry not found"
 
     if request.method == "POST":
-        # TODO: Get updated form data
+        title = request.form["title"].strip()
+        content = request.form["content"].strip()
 
-        # TODO: Update database
-        # IMPORTANT: include id AND session["user"]
+        if not title or not content:
+            error = "Fields cannot be empty"
+        else:
+            try:
+                conn.execute(
+                    "UPDATE entries SET title=?, content=? WHERE id=?",
+                    (title, content, id)
+                )
+                conn.commit()
+                conn.close()
+                return redirect(url_for("dashboard"))
+            except:
+                conn.rollback()
+                conn.close()
+                return "Error updating entry"
 
-        # TODO: Commit and close
-
-        return redirect(url_for("dashboard"))
-
+    conn.close()
     return render_template("edit.html", entry=entry)
-"""
 
 # ---------- DELETE ----------
 # TODO: Create a route like /delete/<id>
@@ -168,23 +179,44 @@ def edit(id):
 # - Redirect back to dashboard
 
 """
-@app.route("/delete/<int:id>")
-def delete(id):
-    if "user" not in session:
-        return redirect(url_for("login"))
+# @app.route("/delete/<int:id>")
+# def delete(id):
+#     if "user" not in session:
+#         return redirect(url_for("login"))
 
-    # TODO: Connect to database
+    conn = get_db()
+    entry = conn.execute(
+    "SELECT * FROM entries WHERE id=?",
+    (id,)
+    ).fetchone()
 
-    # TODO: Delete entry WHERE id AND user
+    if not entry:
+        conn.close()
+        retrun "Entry not found"
 
-    # TODO: Commit and close
+    if request.method == "POST":
+        try:
+            conn.execute(
+                "DELETE FROM entries WHERE id=?",
+                (id,)
+            )
+            conn.commit()
+        except:
+            conn.rollback()
+        finally:
+            conn.close()
+        return redirect(url_for("dashboard"))
 
-    return redirect(url_for("dashboard"))
-"""
+    conn.close()
+    retrun render_template("delete.html", entry=entry)
+
+
+#     return redirect(url_for("dashboard"))
+# """
 
 
 @app.route("/logout")
-def logout():
+def logout():  
     session.pop("user", None)
     return redirect(url_for("login"))
 
