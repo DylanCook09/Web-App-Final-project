@@ -39,83 +39,83 @@ Each user should only be able to access and modify **their own data**.
 ---
 
 ### Part I: Setup & Understanding the Base Code (10 pts)
-- Fork the provided repository.
-- Successfully run the starter project locally.
-- Demonstrate understanding of:
-  - Where login happens
-  - How users are stored
-  - How routes/templates are structured
-- Make at least one small modification (e.g., change text on a page) to confirm setup is working.
+- XFork the provided repository.
+- XSuccessfully run the starter project locally.
+- XDemonstrate understanding of:
+  - XWhere login happens
+  - XHow users are stored
+  - XHow routes/templates are structured
+- XMake at least one small modification (e.g., change text on a page) to confirm setup is working.
 
 ---
 
 ### Part II: Planning Your CRUD App (10 pts)
-- Decide what your app will store (journal, listings, notes, etc.).
-- Clearly define:
-  - What a “record”/“entry” looks like (fields in your database)
-- Plan required features:
-  - Create
-  - Read
-  - Update
-  - Delete
-- Sketch or describe:
-  - Pages/routes you will need
-  - Basic user flow (what happens after login)
-- Complete `planning_and_design.txt`.
+- XDecide what your app will store (journal, listings, notes, etc.).
+- XClearly define:
+  - XWhat a “record”/“entry” looks like (fields in your database)
+- XPlan required features:
+  - XCreate
+  - XRead
+  - XUpdate
+  - XDelete
+- XSketch or describe:
+  - XPages/routes you will need
+  - XBasic user flow (what happens after login)
+- XComplete `planning_and_design.txt`.
 
 ---
 
 ### Part III: Database for App Content (10 pts)
-- Create a **new database table** (separate from users).
-- Include appropriate fields (e.g., title, content, timestamp, user_id).
-- Ensure:
-  - Data persists after restarting the app
-  - Each entry is linked to a specific user
+- XCreate a **new database table** (separate from users).
+- XInclude appropriate fields (e.g., title, content, timestamp, user_id).
+- XEnsure:
+  - XData persists after restarting the app
+  - XEach entry is linked to a specific user
 
 ---
 
 ### Part IV: READ – Display Data (10 pts)
-- After login, users are taken to a **main page/dashboard**.
-- This page displays a list of entries from the database.
+- XAfter login, users are taken to a **main page/dashboard**.
+- XThis page displays a list of entries from the database.
 - Requirements:
-  - Data is clearly formatted
-  - Only shows entries belonging to the logged-in user
-  - Page updates correctly when new data is added
+  - XData is clearly formatted
+  - XOnly shows entries belonging to the logged-in user
+  - XPage updates correctly when new data is added
 
 ---
 
 ### Part V: CREATE – Add New Entries (10 pts)
-- Provide a form/page to create new entries.
+- XProvide a form/page to create new entries.
 - On submission:
-  - Data is saved to the database
-  - Entry is linked to the logged-in user
-- User is redirected back to the main page and sees the new entry.
+  - XData is saved to the database
+  - XEntry is linked to the logged-in user
+- XUser is redirected back to the main page and sees the new entry.
 
 ---
 
 ### Part VI: UPDATE – Edit Entries (10 pts)
-- Users can edit existing entries.
+- XUsers can edit existing entries.
 - Requirements:
-  - Edit form pre-fills with current data
-  - Changes are saved to the database
-  - Only the owner can edit their entries
+  - XEdit form pre-fills with current data
+  - XChanges are saved to the database
+  - XOnly the owner can edit their entries
 
 ---
 
 ### Part VII: DELETE – Remove Entries (10 pts)
-- Users can delete entries.
+- XUsers can delete entries.
 - Requirements:
-  - Entry is removed from the database
-  - Only the owner can delete their entries
-  - (Optional but encouraged) confirmation before deletion
+  - XEntry is removed from the database
+  - XOnly the owner can delete their entries
+  - X(Optional but encouraged) confirmation before deletion
 
 ---
 
 ### Part VIII: User Data Protection & Access Control (5 pts)
 - Users cannot:
-  - View other users’ data
-  - Edit or delete entries they do not own
-- Proper checks are implemented in routes (not just hidden buttons).
+  - XView other users’ data
+  - XEdit or delete entries they do not own
+- XProper checks are implemented in routes (not just hidden buttons).
 
 ---
 
@@ -133,7 +133,7 @@ Each user should only be able to access and modify **their own data**.
 
 ### Optional Bonus (+10 pts each)
 - Add search, filtering, or sorting
-- Improve UI with CSS
+- XImprove UI with CSS
 - Add timestamps or ordering (newest first)
 - Add categories/tags
 
