@@ -178,21 +178,20 @@ def edit(id):
 # - Delete an entry from the database
 # - Redirect back to dashboard
 
-"""
-# @app.route("/delete/<int:id>")
-# def delete(id):
-#     if "user" not in session:
-#         return redirect(url_for("login"))
+@app.route("/delete/<int:id>", methods=["GET", "POST"]) 
+def delete(id):
+    if "user" not in session:
+        return redirect(url_for("login"))
 
     conn = get_db()
     entry = conn.execute(
     "SELECT * FROM entries WHERE id=?",
     (id,)
     ).fetchone()
-
+  
     if not entry:
         conn.close()
-        retrun "Entry not found"
+        return "Entry not found"
 
     if request.method == "POST":
         try:
@@ -208,11 +207,9 @@ def edit(id):
         return redirect(url_for("dashboard"))
 
     conn.close()
-    retrun render_template("delete.html", entry=entry)
+    return render_template("delete.html", entry=entry)
+    return redirect(url_for("dashboard"))
 
-
-#     return redirect(url_for("dashboard"))
-# """
 
 
 @app.route("/logout")
