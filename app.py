@@ -10,6 +10,7 @@ import re
 app = Flask(__name__)
 app.secret_key = "supersecretkey"
 
+
 init_db()
 
 # ---------- PASSWORD VALIDATION ----------

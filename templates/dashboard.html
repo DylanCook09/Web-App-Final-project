@@ -4,12 +4,12 @@
 
 {% block content %}
 
-<h2>Your Dashboard</h2>
+<h2>Your NutriPlannr Dashboard</h2>
 
 <h3>Welcome, {{ username }}!</h3>
 
 <!-- TODO: Add a button or link to create a new entry -->
-<a href="/create">Create New Entry</a>
+<a href="/create">Create New Log</a>
 
 <br><br>
 
@@ -24,10 +24,10 @@
         <p>{{ entry['content'] }}</p>
 
         <!-- TODO: Add Edit link -->
-        <a href="/edit/{{ entry['id'] }}">Edit Entry</a>
+        <a href="/edit/{{ entry['id'] }}">Edit Log</a>
 
         <!-- TODO: Add Delete link -->
-        <a href="/delete/{{ entry['id'] }}">Delete Entry</a>
+        <a href="/delete/{{ entry['id'] }}">Delete Log</a>
 
     </div>
     <hr>
