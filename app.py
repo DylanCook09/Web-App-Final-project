@@ -29,7 +29,6 @@ def login():
     if request.method == "POST":
         username = request.form["username"].strip()
         password = request.form["password"].strip()
-
         conn = get_db()
         user = conn.execute(
             "SELECT * FROM users WHERE username=?",
@@ -39,8 +38,7 @@ def login():
 
         if user and bcrypt.checkpw(password.encode("utf-8"), user["password"]):
             session["user"] = username
-            return re
-            direct(url_for("dashboard"))
+            return redirect(url_for("dashboard"))
         else:
             error = "Incorrect username or password"
 
