@@ -27,9 +27,9 @@ def seed_database():
     ]
 
     sample_entries = [
-        ("Day 1", "5 push-ups"),
-        ("Day 2", "5 push-ups"),
-        ("Day 3", "5 push-ups"),
+        ("Day 1", "5:33", "150 lbs", "2000 calories"),
+        ("Day 2", "5:45", "155 lbs", "2050 calories"),
+        ("Day 3", "5:10", "160 lbs", "2200 calories"),
     ]
 
     try:
