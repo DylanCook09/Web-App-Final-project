@@ -27,9 +27,9 @@ def seed_database():
     ]
 
     sample_entries = [
-        (1, "Day 1", "5 push-ups"),
-        (2, "Day 2", "5 push-ups"),
-        (3, "Day 3", "5 push-ups"),
+        ("Day 1", "5 push-ups"),
+        ("Day 2", "5 push-ups"),
+        ("Day 3", "5 push-ups"),
     ]
 
     try:
