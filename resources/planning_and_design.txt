@@ -5,34 +5,46 @@ APP PLANNING & DESIGN
 1. PROJECT IDEA
 -------------------------
 - What is your app called? Nutriplnr
-- What type of app is it? (journal, listings, notes, etc.) It is a journal app for working out
-- What will users use your app for? they will be able to track thier progess and see how far they have came
+- What type of app is it? The purpose of this app is to help users track their workout progress, log exercises over time.
+- What will users use your app for? The main goal is to provide users with a simple and organized way to record workout information 
 
 2. DATA MODEL (WHAT ARE YOU STORING?)
 -------------------------
-- What is a single “entry” in your app? It is acalled an entry
-- What fields will each entry have? (title, content, date, etc.) It has a title and a content section
-- How will entries be connected to a user? Each user sees only thier entries
+- What is a single “entry” in your app? The app stores workout journal entries.
+- What fields will each entry have? Title, Optional Date, Optional Mood/Energy Level, Progress Notes
+- How will entries be connected to a user? Each entry is connected to the logged-in user account. Users can only see, edit, or delete their own entries
 
 3. CORE FEATURES (CRUD)
 -------------------------
-- What can users CREATE? They can create data relating to thier workouts
-- What will they see on the main page (READ)? They will see all of tier entries
-- What can users EDIT (UPDATE)? They can edit the data in the entry
-- What can users DELETE? They can delete the entire entry
+- What can users CREATE? Create new workout entries, Add workout details such as exercises, sets, reps, and notes, and Record the workout date and workout type
+- What will they see on the main page (READ)? View all their workout entries on the dashboard, Open a single entry to see detailed workout information, and Review past workouts to compare progress
+- What can users EDIT (UPDATE)? Edit workout titles, change workout details or notes, update progress information if mistakes were made
+- What can users DELETE? Delete workout entries they no longer want, and remove outdated or incorrect information
 
 4. USER FLOW
 -------------------------
-- What happens after a user logs in? They are presented the dashboard screen
-- What pages/routes will your app need? (dashboard, create, edit, etc.) It needs a dasboard, create, edit, and delete
+- What happens after a user logs in? User signs up or logs into the app after logging in, the user is taken to the dashboard page
+- What pages/routes will your app need?Home Page
+Login Page
+Register Page
+Dashboard Page
+Create Entry Page
+Edit Entry Page
+Delete Page
 - Describe a typical user experience from login → using your app will be easy and fast 
+User logs into the app
+User views their workout dashboard
+User creates a new workout entry
+User tracks exercises and progress
+User edits entries as needed
+User checks progress over time using graphs or charts
 
 5. USER EXPERIENCE (UX)
 -------------------------
-- How should your app look and feel? it should be warm and inviting
-- How will users navigate between pages? With tabs on the entries
-- How will entries be displayed (list, cards, etc.)? In cards
+- How should your app look and feel?The app should look welcoming, and motivating. With earthy green colors
+- How will users navigate between pages? Navigations will be completely throught the dashboard page with links and commands
+- How will entries be displayed (list, cards, etc.)? In cards that states Workout title, optional date, and short description
 
 6. OPTIONAL FEATURES
 -------------------------
-- What extra features might you add? (search, tags, sorting, etc.) A grapoh showing how you have delvoped overtime
+- What extra features might you add? (search, tags, sorting, etc.) A button that deletes all the entries at once
